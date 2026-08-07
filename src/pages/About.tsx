@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Flag, Globe, ShieldCheck, UserCheck, Eye, Zap, Globe as Globe2, Layers, MessageSquare, ArrowRight, CircleCheck as CheckCircle } from 'lucide-react';
+
+const MotionLink = motion(Link);
 
 const features = [
   {
@@ -206,8 +209,8 @@ export default function About() {
             Looking for UAE Trade License pricing? Calculate the cost now. It takes less than 30
             seconds.
           </motion.h2>
-          <motion.a
-            href="#calculator"
+          <MotionLink
+            to="/cost-calculator"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -216,7 +219,7 @@ export default function About() {
           >
             Cost Calculator
             <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-          </motion.a>
+          </MotionLink>
         </div>
       </section>
     </div>
