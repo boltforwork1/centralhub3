@@ -1,19 +1,51 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, MessageCircle, ArrowRight } from 'lucide-react';
+import { Menu, X, MessageCircle, ArrowRight, ChevronDown } from 'lucide-react';
 
-const navLinks = [
+type SimpleLink = { name: string; path: string };
+type DropdownLink = { name: string; path: string };
+type DropdownItem = { name: string; path: string; children: DropdownLink[] };
+
+const simpleLinks: SimpleLink[] = [
   { name: 'Home', path: '/' },
-  { name: 'Business Setup', path: '/business-setup' },
-  { name: 'Services', path: '/services' },
+];
+
+const dropdowns: DropdownItem[] = [
+  {
+    name: 'Business Setup',
+    path: '/business-setup',
+    children: [
+      { name: 'Mainland', path: '/mainland' },
+      { name: 'Financial Centre', path: '/financial-centre' },
+      { name: 'Free Zone', path: '/free-zone' },
+      { name: 'Offshore', path: '/offshore' },
+    ],
+  },
+  {
+    name: 'Services',
+    path: '/services',
+    children: [
+      { name: 'Company Liquidation', path: '/services/liquidation' },
+      { name: 'Corporate Bank Account', path: '/services/bank-account' },
+      { name: 'Immigration & Registration', path: '/services/immigration' },
+      { name: 'Trade License', path: '/services/trade-license' },
+      { name: 'UAE Golden Visa', path: '/services/golden-visa' },
+    ],
+  },
+];
+
+const trailingLinks: SimpleLink[] = [
   { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
 ];
 
+const allDropdownPaths = dropdowns.flatMap((d) => [d.path, ...d.children.map((c) => c.path)]);
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -25,6 +57,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+    setOpenDropdown(null);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -33,6 +66,10 @@ export default function Navbar() {
       document.body.style.overflow = '';
     };
   }, [mobileOpen]);
+
+  const isActive = (path: string) => location.pathname === path;
+  const isDropdownActive = (d: DropdownItem) =>
+    d.path === location.pathname || d.children.some((c) => c.path === location.pathname);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -54,8 +91,82 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden items-center gap-1 lg:flex">
-            {navLinks.map((link) => {
-              const active = location.pathname === link.path;
+            {simpleLinks.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                    active ? 'text-teal-600' : 'text-navy-700 hover:text-teal-500'
+                  }`}
+                >
+                  {link.name}
+                  {active && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-teal-500"
+                    />
+                  )}
+                </Link>
+              );
+            })}
+
+            {dropdowns.map((dd) => {
+              const active = isDropdownActive(dd);
+              return (
+                <div
+                  key={dd.path}
+                  className="group relative"
+                  onMouseEnter={() => setOpenDropdown(dd.path)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <Link
+                    to={dd.path}
+                    className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                      active ? 'text-teal-600' : 'text-navy-700 group-hover:text-teal-500'
+                    }`}
+                  >
+                    {dd.name}
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-200 group-hover:rotate-180 ${
+                        active ? 'text-teal-600' : 'text-navy-400 group-hover:text-teal-500'
+                      }`}
+                    />
+                  </Link>
+                  {/* Dropdown panel */}
+                  <div
+                    className={`absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 origin-top transition-all duration-200 ${
+                      openDropdown === dd.path
+                        ? 'visible translate-y-0 opacity-100'
+                        : 'invisible -translate-y-1 opacity-0'
+                    }`}
+                  >
+                    <div className="overflow-hidden rounded-xl border border-slate-700/50 bg-slate-900 shadow-2xl shadow-slate-900/50">
+                      {dd.children.map((child) => {
+                        const childActive = isActive(child.path);
+                        return (
+                          <Link
+                            key={child.path}
+                            to={child.path}
+                            className={`block border-b border-slate-700/40 px-5 py-3 text-sm font-medium transition-colors duration-200 last:border-b-0 ${
+                              childActive
+                                ? 'bg-teal-500/10 text-teal-400'
+                                : 'text-white hover:bg-slate-800 hover:text-teal-500'
+                            }`}
+                          >
+                            {child.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {trailingLinks.map((link) => {
+              const active = isActive(link.path);
               return (
                 <Link
                   key={link.path}
@@ -127,8 +238,8 @@ export default function Navbar() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col p-3">
-                {navLinks.map((link) => {
-                  const active = location.pathname === link.path;
+                {simpleLinks.map((link) => {
+                  const active = isActive(link.path);
                   return (
                     <Link
                       key={link.path}
@@ -143,6 +254,57 @@ export default function Navbar() {
                     </Link>
                   );
                 })}
+
+                {dropdowns.map((dd) => (
+                  <div key={dd.path} className="flex flex-col">
+                    <Link
+                      to={dd.path}
+                      className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                        isDropdownActive(dd)
+                          ? 'bg-teal-50 text-teal-600'
+                          : 'text-navy-700 hover:bg-navy-50 hover:text-teal-500'
+                      }`}
+                    >
+                      {dd.name}
+                    </Link>
+                    <div className="ml-3 border-l border-navy-100 pl-3">
+                      {dd.children.map((child) => {
+                        const active = isActive(child.path);
+                        return (
+                          <Link
+                            key={child.path}
+                            to={child.path}
+                            className={`block rounded-lg px-4 py-2.5 text-sm transition-colors ${
+                              active
+                                ? 'bg-teal-50 text-teal-600'
+                                : 'text-navy-600 hover:bg-navy-50 hover:text-teal-500'
+                            }`}
+                          >
+                            {child.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+
+                {trailingLinks.map((link) => {
+                  const active = isActive(link.path);
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                        active
+                          ? 'bg-teal-50 text-teal-600'
+                          : 'text-navy-700 hover:bg-navy-50 hover:text-teal-500'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
+
                 <div className="mt-2 flex items-center gap-3 border-t border-navy-100 pt-3">
                   <a
                     href="https://wa.me/97142388381"
