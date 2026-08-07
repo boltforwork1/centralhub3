@@ -3,6 +3,7 @@ import Layout from '@/layout/Layout';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
+import CostCalculator from '@/pages/CostCalculator';
 import BusinessSetup from '@/pages/BusinessSetup';
 import Services from '@/pages/Services';
 
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cost-calculator" element={<CostCalculator />} />
           <Route path="/business-setup" element={<BusinessSetup />} />
           <Route path="/services" element={<Services />} />
         </Route>
