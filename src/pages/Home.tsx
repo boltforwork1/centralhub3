@@ -15,6 +15,7 @@ import {
   UserCheck,
   Landmark,
   Plane,
+  ChevronDown,
 } from 'lucide-react';
 
 const pillars = [
@@ -95,9 +96,32 @@ const services = [
   },
 ];
 
+const stats = [
+  { value: '2,500+', label: 'Clients Helped' },
+  { value: '12+', label: 'Years Experience' },
+  { value: '25+', label: 'Expert Consultants' },
+  { value: '97%', label: 'Client Satisfaction' },
+];
+
+const faqs = [
+  {
+    q: 'Why should someone set up a mainland business in the UAE?',
+    a: 'The UAE is a prime destination offering myriad business opportunities. Location of target market and business activities should guide the choice between Dubai and Abu Dhabi.',
+  },
+  {
+    q: 'How can a foreigner start a business in Dubai?',
+    a: 'The CCL permits 100% foreign ownership. Steps: determine entity type, select company name, apply for a business license, get pre-approvals, register your business, and get your license.',
+  },
+  {
+    q: 'What is the best free zone to open a company in Dubai?',
+    a: 'Key factors include location, chosen business activities, and office space requirements. Contact our experts to find the perfect fit.',
+  },
+];
+
 export default function Home() {
   const [form, setForm] = useState({ name: '', contact: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -361,6 +385,104 @@ export default function Home() {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Stats / Social Proof Banner ===== */}
+      <section className="relative overflow-hidden bg-slate-900 py-24">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-gold-500/5 blur-3xl" />
+          <div className="absolute right-1/4 bottom-0 h-64 w-64 rounded-full bg-gold-500/5 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="font-display text-5xl font-bold text-amber-500">
+                  {stat.value}
+                </div>
+                <div className="mt-3 text-lg text-slate-300">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ / SEO Content ===== */}
+      <section className="bg-slate-50 py-24">
+        <div className="mx-auto max-w-3xl px-6 sm:px-8">
+          {/* Header */}
+          <div className="text-center">
+            <span className="text-sm font-bold uppercase tracking-wider text-gold-500">FAQ</span>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Everything you need to know about setting up your business in Dubai.
+            </p>
+          </div>
+
+          {/* Accordion */}
+          <div className="mt-12 flex flex-col gap-4">
+            {faqs.map((faq, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div
+                  key={faq.q}
+                  className={`overflow-hidden rounded-xl border bg-white transition-colors duration-200 ${
+                    isOpen ? 'border-gold-300' : 'border-slate-200'
+                  }`}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  >
+                    <span
+                      className={`font-display text-base font-semibold sm:text-lg ${
+                        isOpen ? 'text-gold-600' : 'text-slate-900'
+                      }`}
+                    >
+                      {faq.q}
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180 text-gold-500' : 'text-slate-400'
+                      }`}
+                    />
+                  </button>
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-slate-600 sm:text-base">
+                      {faq.a}
+                    </p>
+                  </motion.div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="mt-12 text-center">
+            <p className="text-base text-slate-700">Still have questions?</p>
+            <a
+              href="/contact"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-gold-500 to-gold-400 px-7 py-3.5 text-base font-semibold text-navy-900 shadow-lg shadow-gold-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-gold-500/40 hover:brightness-105"
+            >
+              Contact us today for a Free Consultation
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </section>
