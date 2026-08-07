@@ -1,6 +1,21 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, Users, ShieldCheck, Check, Phone } from 'lucide-react';
+import {
+  ArrowRight,
+  Briefcase,
+  Users,
+  ShieldCheck,
+  Check,
+  CheckCircle,
+  Phone,
+  Building2,
+  Archive,
+  Award,
+  Stamp,
+  UserCheck,
+  Landmark,
+  Plane,
+} from 'lucide-react';
 
 const pillars = [
   {
@@ -17,6 +32,66 @@ const pillars = [
     icon: ShieldCheck,
     title: 'Transparency',
     text: 'We are very transparent with our pricing structure',
+  },
+];
+
+const formationBenefits = [
+  '100% Foreign Ownership',
+  'Investors Rights & Protection',
+  'No Corporate or Personal Tax',
+  'Advantageous Geographical Location',
+  'Secure & Quality Lifestyle',
+  'Exceptional Government Support',
+  'Easy Visa Obtaining Process',
+];
+
+const services = [
+  {
+    icon: Building2,
+    title: 'Company Formation in Dubai',
+    description:
+      'Starting a Dubai company involves tons of paperwork. Let us do our job and you can focus on your business.',
+  },
+  {
+    icon: Archive,
+    title: 'Company Liquidation',
+    description:
+      'Expert company liquidation advice and opinion best liquidation approach, Dubai liquidators.',
+  },
+  {
+    icon: Award,
+    title: 'Business License',
+    description: "We are UAE's Leading business setup & company formation company.",
+  },
+  {
+    icon: Stamp,
+    title: 'PRO & Visa Services',
+    description:
+      'Commercial License, Employee Visas, Attestations, Translation & Immigration Services.',
+  },
+  {
+    icon: UserCheck,
+    title: 'Corporate Sponsor & Nominee',
+    description:
+      "Establish your company with Dubai's leading corporate nominee services.",
+  },
+  {
+    icon: Landmark,
+    title: 'Bank Liaison & Assistance',
+    description:
+      'We can help you set up such a structure which can later be transformed into a subsidiary or branch office.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Government Services',
+    description:
+      'With direct access to Government Departments and Ministries, we can get your job done in very timely manner.',
+  },
+  {
+    icon: Plane,
+    title: 'Immigration & Labour',
+    description:
+      'We undertake all kinds of Labor & Immigration Registration in Dubai, UAE for individuals and company.',
   },
 ];
 
@@ -190,6 +265,100 @@ export default function Home() {
                   {pillar.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-navy-600">{pillar.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Company Formation Intro ===== */}
+      <section className="bg-slate-50 py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-16">
+            {/* Left: Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+                Business Setup in Dubai
+              </span>
+              <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight text-slate-900">
+                Company Formation in Dubai UAE
+              </h2>
+              <p className="mt-6 text-base leading-relaxed text-slate-600">
+                Central Hub is here to ensure Investors, Entrepreneurs, and Business Owners no longer
+                lose sleep worrying about the complexities and red tape involved with the business
+                setup process. We do all the heavy lifting by taking care of all the technical,
+                administrative, and financial aspects of setting up a business in the UAE.
+              </p>
+            </motion.div>
+
+            {/* Right: Benefits List */}
+            <motion.ul
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-80px' }}
+              className="flex flex-col gap-4"
+            >
+              {formationBenefits.map((benefit, i) => (
+                <motion.li
+                  key={benefit}
+                  custom={i}
+                  variants={{
+                    hidden: { opacity: 0, x: 24 },
+                    show: (delay: number) => ({
+                      opacity: 1,
+                      x: 0,
+                      transition: { duration: 0.4, delay: delay * 0.08 },
+                    }),
+                  }}
+                  className="flex items-center gap-3"
+                >
+                  <CheckCircle className="h-6 w-6 shrink-0 text-gold-500" strokeWidth={2} />
+                  <span className="text-base font-medium text-slate-700">{benefit}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Services Grid ===== */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          {/* Header */}
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+              Dubai Business Setup Services
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+              Services We Provide to Set Up Your Company in Dubai UAE
+            </h2>
+          </div>
+
+          {/* Grid */}
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.45, delay: (i % 4) * 0.08 }}
+                className="group rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gold-50 transition-colors duration-300 group-hover:bg-gold-100">
+                  <service.icon className="h-8 w-8 text-gold-500" strokeWidth={1.75} />
+                </div>
+                <h3 className="mt-5 font-display text-lg font-bold text-slate-900">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                  {service.description}
+                </p>
               </motion.div>
             ))}
           </div>
