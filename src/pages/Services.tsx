@@ -1,18 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  Building2,
-  Landmark,
-  Globe2,
-  Ship,
-  XCircle,
-  Wallet,
-  Plane,
-  FileText,
-  Award,
-  ArrowRight,
-  Calculator,
-} from 'lucide-react';
+import { Building2, Landmark, Globe as Globe2, Ship, Circle as XCircle, Wallet, Plane, FileText, Award, ArrowRight, Calculator } from 'lucide-react';
 
 type Jurisdiction = {
   name: string;
@@ -115,7 +103,7 @@ export default function Services() {
             transition={{ duration: 0.5 }}
             className="font-display text-5xl font-bold text-white"
           >
-            Our Services & Solutions
+            Our Corporate Services
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
