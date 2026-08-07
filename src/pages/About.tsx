@@ -1,17 +1,5 @@
 import { motion } from 'framer-motion';
-import {
-  Flag,
-  Globe,
-  ShieldCheck,
-  UserCheck,
-  Eye,
-  Zap,
-  Globe2,
-  Layers,
-  MessageSquare,
-  ArrowRight,
-  CheckCircle,
-} from 'lucide-react';
+import { Flag, Globe, ShieldCheck, UserCheck, Eye, Zap, Globe as Globe2, Layers, MessageSquare, ArrowRight, CircleCheck as CheckCircle } from 'lucide-react';
 
 const features = [
   {
@@ -75,8 +63,8 @@ export default function About() {
       {/* ===== Hero ===== */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 py-20">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-32 top-10 h-96 w-96 rounded-full border border-gold-500/10" />
-          <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-500/5 blur-3xl" />
+          <div className="absolute -right-32 top-10 h-96 w-96 rounded-full border border-teal-500/10" />
+          <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-teal-500/5 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8 lg:px-12">
           <motion.h1
@@ -91,7 +79,7 @@ export default function About() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-5 text-lg font-medium text-gold-300"
+            className="mt-5 text-lg font-medium text-teal-300"
           >
             Your trusted partner for business setup in the UAE.
           </motion.p>
@@ -108,7 +96,7 @@ export default function About() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
             >
-              <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+              <span className="text-sm font-bold uppercase tracking-wider text-teal-500">
                 Who is Central Hub?
               </span>
               <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight text-slate-900">
@@ -151,8 +139,8 @@ export default function About() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="rounded-2xl border border-navy-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy-900/5"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gold-50">
-                  <feature.icon className="h-8 w-8 text-gold-500" strokeWidth={1.75} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-teal-50">
+                  <feature.icon className="h-8 w-8 text-teal-500" strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-5 font-display text-xl font-bold text-slate-900">
                   {feature.title}
@@ -160,7 +148,7 @@ export default function About() {
                 <ul className="mt-5 space-y-3">
                   {feature.points.map((point) => (
                     <li key={point} className="flex items-start gap-3">
-                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" strokeWidth={2} />
+                      <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-teal-500" strokeWidth={2} />
                       <span className="text-sm leading-relaxed text-slate-600">{point}</span>
                     </li>
                   ))}
@@ -175,7 +163,7 @@ export default function About() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+            <span className="text-sm font-bold uppercase tracking-wider text-teal-500">
               Our Approach
             </span>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
@@ -192,8 +180,8 @@ export default function About() {
                 transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
                 className="group rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-50 transition-colors duration-300 group-hover:bg-gold-100">
-                  <pillar.icon className="h-6 w-6 text-gold-500" strokeWidth={1.75} />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 transition-colors duration-300 group-hover:bg-teal-100">
+                  <pillar.icon className="h-6 w-6 text-teal-500" strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-bold text-slate-900">
                   {pillar.title}
@@ -206,7 +194,7 @@ export default function About() {
       </section>
 
       {/* ===== Cost Calculator CTA ===== */}
-      <section className="bg-amber-500 py-16">
+      <section className="bg-teal-500 py-16">
         <div className="mx-auto max-w-4xl px-6 text-center sm:px-8 lg:px-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

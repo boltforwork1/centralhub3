@@ -1,14 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import {
-  MapPin,
-  Phone,
-  MessageCircle,
-  Mail,
-  Clock,
-  Send,
-  CheckCircle,
-} from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Mail, Clock, Send, CircleCheck as CheckCircle } from 'lucide-react';
 
 const contactInfo = [
   {
@@ -35,8 +27,8 @@ export default function Contact() {
       {/* ===== Hero ===== */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 py-20">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-32 top-10 h-96 w-96 rounded-full border border-gold-500/10" />
-          <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-500/5 blur-3xl" />
+          <div className="absolute -right-32 top-10 h-96 w-96 rounded-full border border-teal-500/10" />
+          <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-teal-500/5 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8 lg:px-12">
           <motion.h1
@@ -51,7 +43,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-5 text-lg font-medium text-gold-300"
+            className="mt-5 text-lg font-medium text-teal-300"
           >
             Let us help your business move forward. Get in touch with our experts today.
           </motion.p>
@@ -69,7 +61,7 @@ export default function Contact() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
             >
-              <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+              <span className="text-sm font-bold uppercase tracking-wider text-teal-500">
                 Contact Information
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-navy-900">
@@ -84,8 +76,8 @@ export default function Contact() {
               <ul className="mt-8 space-y-6">
                 {contactInfo.map((item) => (
                   <li key={item.label} className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold-50">
-                      <item.icon className="h-6 w-6 text-gold-500" strokeWidth={1.75} />
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-50">
+                      <item.icon className="h-6 w-6 text-teal-500" strokeWidth={1.75} />
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -125,7 +117,7 @@ export default function Contact() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-6 text-sm font-semibold text-gold-500 hover:text-gold-600"
+                    className="mt-6 text-sm font-semibold text-teal-500 hover:text-teal-600"
                   >
                     Send another message
                   </button>
@@ -143,7 +135,7 @@ export default function Contact() {
                       id="fullName"
                       type="text"
                       required
-                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                       placeholder="John Doe"
                     />
                   </div>
@@ -158,7 +150,7 @@ export default function Contact() {
                       id="email"
                       type="email"
                       required
-                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -172,7 +164,7 @@ export default function Contact() {
                     <input
                       id="phone"
                       type="tel"
-                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                       placeholder="+971 4 000 0000"
                     />
                   </div>
@@ -187,7 +179,7 @@ export default function Contact() {
                       id="subject"
                       type="text"
                       required
-                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                       placeholder="How can we help?"
                     />
                   </div>
@@ -202,13 +194,13 @@ export default function Contact() {
                       id="message"
                       rows={4}
                       required
-                      className="mt-2 w-full resize-none rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                      className="mt-2 w-full resize-none rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                       placeholder="Tell us about your business needs..."
                     />
                   </div>
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-amber-500/25 transition-all duration-200 hover:bg-amber-600 hover:shadow-xl hover:shadow-amber-500/30"
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-teal-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-500/25 transition-all duration-200 hover:bg-teal-600 hover:shadow-xl hover:shadow-teal-500/30"
                   >
                     Send Message
                     <Send className="h-5 w-5" />

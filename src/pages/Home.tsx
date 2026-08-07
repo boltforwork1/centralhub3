@@ -1,22 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  ArrowRight,
-  Briefcase,
-  Users,
-  ShieldCheck,
-  Check,
-  CheckCircle,
-  Phone,
-  Building2,
-  Archive,
-  Award,
-  Stamp,
-  UserCheck,
-  Landmark,
-  Plane,
-  ChevronDown,
-} from 'lucide-react';
+import { ArrowRight, Briefcase, Users, ShieldCheck, Check, CircleCheck as CheckCircle, Phone, Building2, Archive, Award, Stamp, UserCheck, Landmark, Plane, ChevronDown } from 'lucide-react';
 
 const pillars = [
   {
@@ -137,11 +121,11 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
         {/* Abstract geometric shapes */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-32 top-10 h-96 w-96 rounded-full border border-gold-500/10" />
-          <div className="absolute -right-20 top-20 h-72 w-72 rounded-full border border-gold-500/10" />
-          <div className="absolute right-20 top-40 h-48 w-48 rounded-full border border-gold-500/10" />
-          <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-500/5 blur-3xl" />
-          <div className="absolute right-1/4 top-1/3 h-64 w-64 rounded-full bg-gold-500/5 blur-3xl" />
+          <div className="absolute -right-32 top-10 h-96 w-96 rounded-full border border-teal-500/10" />
+          <div className="absolute -right-20 top-20 h-72 w-72 rounded-full border border-teal-500/10" />
+          <div className="absolute right-20 top-40 h-48 w-48 rounded-full border border-teal-500/10" />
+          <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-teal-500/5 blur-3xl" />
+          <div className="absolute right-1/4 top-1/3 h-64 w-64 rounded-full bg-teal-500/5 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-44 sm:px-8 lg:px-12 lg:pt-28 lg:pb-52">
@@ -151,9 +135,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-1.5 text-sm font-medium text-gold-300"
+              className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-1.5 text-sm font-medium text-teal-300"
             >
-              <span className="flex h-2 w-2 rounded-full bg-gold-400" />
+              <span className="flex h-2 w-2 rounded-full bg-teal-400" />
               Your Trusted Dubai Business Setup Partner
             </motion.div>
 
@@ -165,7 +149,7 @@ export default function Home() {
               className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
               Business Setup in Dubai &{' '}
-              <span className="bg-gradient-to-r from-gold-400 to-gold-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-400 to-teal-300 bg-clip-text text-transparent">
                 UAE Company Formation
               </span>
             </motion.h1>
@@ -192,7 +176,7 @@ export default function Home() {
             >
               <a
                 href="/contact"
-                className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-gold-500 to-gold-400 px-7 py-3.5 text-base font-semibold text-navy-900 shadow-xl shadow-gold-500/25 transition-all duration-200 hover:shadow-2xl hover:shadow-gold-500/40 hover:brightness-105"
+                className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 px-7 py-3.5 text-base font-semibold text-navy-900 shadow-xl shadow-teal-500/25 transition-all duration-200 hover:shadow-2xl hover:shadow-teal-500/40 hover:brightness-105"
               >
                 Contact Us Now
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -201,7 +185,7 @@ export default function Home() {
                 href="https://wa.me/97142388381"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-600 px-7 py-3.5 text-base font-medium text-slate-200 transition-colors duration-200 hover:border-gold-500/50 hover:text-gold-300"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-600 px-7 py-3.5 text-base font-medium text-slate-200 transition-colors duration-200 hover:border-teal-500/50 hover:text-teal-300"
               >
                 <Phone className="h-5 w-5" />
                 +971 4 238 8381
@@ -226,7 +210,7 @@ export default function Home() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Enter your full name"
-                  className="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-navy-400 transition-colors focus:border-gold-500/50 focus:bg-white/10 focus:outline-none"
+                  className="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-navy-400 transition-colors focus:border-teal-500/50 focus:bg-white/10 focus:outline-none"
                 />
               </div>
               <div>
@@ -236,12 +220,12 @@ export default function Home() {
                   value={form.contact}
                   onChange={(e) => setForm({ ...form, contact: e.target.value })}
                   placeholder="Email or phone number"
-                  className="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-navy-400 transition-colors focus:border-gold-500/50 focus:bg-white/10 focus:outline-none"
+                  className="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-navy-400 transition-colors focus:border-teal-500/50 focus:bg-white/10 focus:outline-none"
                 />
               </div>
               <button
                 onClick={handleSubmit}
-                className="group inline-flex h-[50px] items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-gradient-to-r from-gold-500 to-gold-400 px-7 text-base font-semibold text-navy-900 shadow-lg shadow-gold-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-gold-500/40 hover:brightness-105"
+                className="group inline-flex h-[50px] items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 px-7 text-base font-semibold text-navy-900 shadow-lg shadow-teal-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/40 hover:brightness-105"
               >
                 {submitted ? (
                   <>
@@ -260,7 +244,7 @@ export default function Home() {
               <motion.p
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-4 text-sm text-gold-300"
+                className="mt-4 text-sm text-teal-300"
               >
                 Thank you! One of our consultants will reach out to you shortly.
               </motion.p>
@@ -280,10 +264,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group rounded-2xl border border-navy-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold-200 hover:shadow-xl hover:shadow-navy-900/5"
+                className="group rounded-2xl border border-navy-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl hover:shadow-navy-900/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-50 transition-colors duration-300 group-hover:bg-gold-100">
-                  <pillar.icon className="h-6 w-6 text-gold-500" strokeWidth={1.75} />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 transition-colors duration-300 group-hover:bg-teal-100">
+                  <pillar.icon className="h-6 w-6 text-teal-500" strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-semibold text-navy-900">
                   {pillar.title}
@@ -306,7 +290,7 @@ export default function Home() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5 }}
             >
-              <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+              <span className="text-sm font-bold uppercase tracking-wider text-teal-500">
                 Business Setup in Dubai
               </span>
               <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight text-slate-900">
@@ -341,7 +325,7 @@ export default function Home() {
                   }}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle className="h-6 w-6 shrink-0 text-gold-500" strokeWidth={2} />
+                  <CheckCircle className="h-6 w-6 shrink-0 text-teal-500" strokeWidth={2} />
                   <span className="text-base font-medium text-slate-700">{benefit}</span>
                 </motion.li>
               ))}
@@ -355,7 +339,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+            <span className="text-sm font-bold uppercase tracking-wider text-teal-500">
               Dubai Business Setup Services
             </span>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
@@ -374,8 +358,8 @@ export default function Home() {
                 transition={{ duration: 0.45, delay: (i % 4) * 0.08 }}
                 className="group rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gold-50 transition-colors duration-300 group-hover:bg-gold-100">
-                  <service.icon className="h-8 w-8 text-gold-500" strokeWidth={1.75} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-teal-50 transition-colors duration-300 group-hover:bg-teal-100">
+                  <service.icon className="h-8 w-8 text-teal-500" strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-bold text-slate-900">
                   {service.title}
@@ -392,8 +376,8 @@ export default function Home() {
       {/* ===== Stats / Social Proof Banner ===== */}
       <section className="relative overflow-hidden bg-slate-900 py-24">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-gold-500/5 blur-3xl" />
-          <div className="absolute right-1/4 bottom-0 h-64 w-64 rounded-full bg-gold-500/5 blur-3xl" />
+          <div className="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-teal-500/5 blur-3xl" />
+          <div className="absolute right-1/4 bottom-0 h-64 w-64 rounded-full bg-teal-500/5 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -406,7 +390,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="font-display text-5xl font-bold text-amber-500">
+                <div className="font-display text-5xl font-bold text-teal-500">
                   {stat.value}
                 </div>
                 <div className="mt-3 text-lg text-slate-300">{stat.label}</div>
@@ -421,7 +405,7 @@ export default function Home() {
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Header */}
           <div className="text-center">
-            <span className="text-sm font-bold uppercase tracking-wider text-gold-500">FAQ</span>
+            <span className="text-sm font-bold uppercase tracking-wider text-teal-500">FAQ</span>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl">
               Frequently Asked Questions
             </h2>
@@ -438,7 +422,7 @@ export default function Home() {
                 <div
                   key={faq.q}
                   className={`overflow-hidden rounded-xl border bg-white transition-colors duration-200 ${
-                    isOpen ? 'border-gold-300' : 'border-slate-200'
+                    isOpen ? 'border-teal-300' : 'border-slate-200'
                   }`}
                 >
                   <button
@@ -447,14 +431,14 @@ export default function Home() {
                   >
                     <span
                       className={`font-display text-base font-semibold sm:text-lg ${
-                        isOpen ? 'text-gold-600' : 'text-slate-900'
+                        isOpen ? 'text-teal-600' : 'text-slate-900'
                       }`}
                     >
                       {faq.q}
                     </span>
                     <ChevronDown
                       className={`h-5 w-5 shrink-0 transition-transform duration-300 ${
-                        isOpen ? 'rotate-180 text-gold-500' : 'text-slate-400'
+                        isOpen ? 'rotate-180 text-teal-500' : 'text-slate-400'
                       }`}
                     />
                   </button>
@@ -478,7 +462,7 @@ export default function Home() {
             <p className="text-base text-slate-700">Still have questions?</p>
             <a
               href="/contact"
-              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-gold-500 to-gold-400 px-7 py-3.5 text-base font-semibold text-navy-900 shadow-lg shadow-gold-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-gold-500/40 hover:brightness-105"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 px-7 py-3.5 text-base font-semibold text-navy-900 shadow-lg shadow-teal-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/40 hover:brightness-105"
             >
               Contact us today for a Free Consultation
               <ArrowRight className="h-5 w-5" />

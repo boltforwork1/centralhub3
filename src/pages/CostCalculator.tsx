@@ -97,7 +97,7 @@ export default function CostCalculator() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full bg-gold-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-gold-500"
+            className="inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-teal-500"
           >
             <Sparkles className="h-4 w-4" />
             Instant Estimate
@@ -145,7 +145,7 @@ export default function CostCalculator() {
                       <div
                         className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
                           isDone
-                            ? 'bg-gold-500 text-white'
+                            ? 'bg-teal-500 text-white'
                             : isActive
                               ? 'bg-navy-900 text-white ring-4 ring-navy-900/10'
                               : 'bg-slate-100 text-slate-400'
@@ -166,7 +166,7 @@ export default function CostCalculator() {
               </div>
               <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
                 <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-500"
+                  className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-500"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -199,13 +199,13 @@ export default function CostCalculator() {
                           onClick={() => handleJurisdiction(opt.id)}
                           className={`flex w-full items-center gap-4 rounded-xl border-2 p-5 text-left transition-all duration-200 ${
                             selected
-                              ? 'border-amber-500 bg-amber-50 shadow-md shadow-amber-500/10'
+                              ? 'border-teal-500 bg-teal-50 shadow-md shadow-teal-500/10'
                               : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                           }`}
                         >
                           <div
                             className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-colors ${
-                              selected ? 'bg-amber-500 text-white' : 'bg-slate-100 text-slate-500'
+                              selected ? 'bg-teal-500 text-white' : 'bg-slate-100 text-slate-500'
                             }`}
                           >
                             <opt.icon className="h-6 w-6" strokeWidth={1.75} />
@@ -219,7 +219,7 @@ export default function CostCalculator() {
                             </p>
                           </div>
                           {selected && (
-                            <CheckCircle className="h-6 w-6 shrink-0 text-amber-500" />
+                            <CheckCircle className="h-6 w-6 shrink-0 text-teal-500" />
                           )}
                         </button>
                       );
@@ -252,13 +252,13 @@ export default function CostCalculator() {
                           onClick={() => handleVisas(opt.id)}
                           className={`flex flex-col items-center gap-3 rounded-xl border-2 p-6 text-center transition-all duration-200 ${
                             selected
-                              ? 'border-amber-500 bg-amber-50 shadow-md shadow-amber-500/10'
+                              ? 'border-teal-500 bg-teal-50 shadow-md shadow-teal-500/10'
                               : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                           }`}
                         >
                           <div
                             className={`flex h-12 w-12 items-center justify-center rounded-xl transition-colors ${
-                              selected ? 'bg-amber-500 text-white' : 'bg-slate-100 text-slate-500'
+                              selected ? 'bg-teal-500 text-white' : 'bg-slate-100 text-slate-500'
                             }`}
                           >
                             <opt.icon className="h-6 w-6" strokeWidth={1.75} />
@@ -306,13 +306,13 @@ export default function CostCalculator() {
                           onClick={() => handleOffice(opt.id)}
                           className={`flex w-full items-center gap-4 rounded-xl border-2 p-5 text-left transition-all duration-200 ${
                             selected
-                              ? 'border-amber-500 bg-amber-50 shadow-md shadow-amber-500/10'
+                              ? 'border-teal-500 bg-teal-50 shadow-md shadow-teal-500/10'
                               : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                           }`}
                         >
                           <div
                             className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-colors ${
-                              selected ? 'bg-amber-500 text-white' : 'bg-slate-100 text-slate-500'
+                              selected ? 'bg-teal-500 text-white' : 'bg-slate-100 text-slate-500'
                             }`}
                           >
                             <opt.icon className="h-6 w-6" strokeWidth={1.75} />
@@ -326,7 +326,7 @@ export default function CostCalculator() {
                             </p>
                           </div>
                           {selected && (
-                            <CheckCircle className="h-6 w-6 shrink-0 text-amber-500" />
+                            <CheckCircle className="h-6 w-6 shrink-0 text-teal-500" />
                           )}
                         </button>
                       );
@@ -360,8 +360,8 @@ export default function CostCalculator() {
                       transition={{ duration: 0.4 }}
                       className="text-center"
                     >
-                      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold-50">
-                        <TrendingUp className="h-8 w-8 text-gold-500" strokeWidth={1.75} />
+                      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
+                        <TrendingUp className="h-8 w-8 text-teal-500" strokeWidth={1.75} />
                       </div>
                       <h2 className="mt-5 font-display text-2xl font-bold text-navy-900">
                         Your Estimated Cost
@@ -370,7 +370,7 @@ export default function CostCalculator() {
                         Based on your selections, here's your estimated setup cost range:
                       </p>
                       <div className="mt-6 rounded-2xl bg-gradient-to-br from-navy-900 to-slate-800 p-8">
-                        <p className="text-xs font-bold uppercase tracking-wider text-gold-300">
+                        <p className="text-xs font-bold uppercase tracking-wider text-teal-300">
                           Estimated Range
                         </p>
                         <p className="mt-2 font-display text-4xl font-bold text-white">
@@ -396,7 +396,7 @@ export default function CostCalculator() {
                       </div>
                       <a
                         href="/contact"
-                        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-amber-500/25 transition-all duration-200 hover:bg-amber-600 hover:shadow-xl"
+                        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-teal-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-500/25 transition-all duration-200 hover:bg-teal-600 hover:shadow-xl"
                       >
                         Talk to an Expert
                         <ArrowRight className="h-5 w-5" />
@@ -422,7 +422,7 @@ export default function CostCalculator() {
                             id="calcName"
                             type="text"
                             required
-                            className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                            className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                             placeholder="John Doe"
                           />
                         </div>
@@ -437,7 +437,7 @@ export default function CostCalculator() {
                             id="calcEmail"
                             type="email"
                             required
-                            className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                            className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                             placeholder="john@example.com"
                           />
                         </div>
@@ -452,13 +452,13 @@ export default function CostCalculator() {
                             id="calcPhone"
                             type="tel"
                             required
-                            className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                            className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-colors focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
                             placeholder="+971 5X XXX XXXX"
                           />
                         </div>
                         <button
                           type="submit"
-                          className="flex w-full items-center justify-center gap-2 rounded-lg bg-amber-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-amber-500/25 transition-all duration-200 hover:bg-amber-600 hover:shadow-xl"
+                          className="flex w-full items-center justify-center gap-2 rounded-lg bg-teal-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-teal-500/25 transition-all duration-200 hover:bg-teal-600 hover:shadow-xl"
                         >
                           Reveal My Quote
                           <Sparkles className="h-5 w-5" />

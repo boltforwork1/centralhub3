@@ -48,13 +48,8 @@ export default function Navbar() {
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
           {/* Logo */}
-          <Link to="/" className="group flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-navy-900 to-navy-800 shadow-lg shadow-navy-900/20">
-              <span className="font-display text-lg font-bold text-gold-400">C</span>
-            </span>
-            <span className="font-display text-xl font-bold tracking-tight text-navy-900">
-              Central<span className="text-gold-500">Hub</span>
-            </span>
+          <Link to="/" className="group flex items-center">
+            <img src="/logo.webp" alt="CentralHub" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop nav */}
@@ -66,14 +61,14 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                    active ? 'text-gold-600' : 'text-navy-700 hover:text-gold-500'
+                    active ? 'text-teal-600' : 'text-navy-700 hover:text-teal-500'
                   }`}
                 >
                   {link.name}
                   {active && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gold-500"
+                      className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-teal-500"
                     />
                   )}
                 </Link>
@@ -88,13 +83,13 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               aria-label="WhatsApp"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-200 text-navy-700 transition-all duration-200 hover:border-gold-400 hover:bg-gold-50 hover:text-gold-600"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-navy-200 text-navy-700 transition-all duration-200 hover:border-teal-400 hover:bg-teal-50 hover:text-teal-600"
             >
               <MessageCircle className="h-5 w-5" />
             </a>
             <a
               href="#quote"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-500 to-gold-400 px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-lg shadow-gold-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-gold-500/40 hover:brightness-105"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-teal-500 to-teal-400 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-500/25 transition-all duration-200 hover:bg-teal-600 hover:shadow-xl hover:shadow-teal-500/40"
             >
               Request Quote
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -140,8 +135,8 @@ export default function Navbar() {
                       to={link.path}
                       className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                         active
-                          ? 'bg-gold-50 text-gold-600'
-                          : 'text-navy-700 hover:bg-navy-50 hover:text-gold-500'
+                          ? 'bg-teal-50 text-teal-600'
+                          : 'text-navy-700 hover:bg-navy-50 hover:text-teal-500'
                       }`}
                     >
                       {link.name}
@@ -153,14 +148,14 @@ export default function Navbar() {
                     href="https://wa.me/97142388381"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-700 transition-colors hover:border-gold-400 hover:text-gold-600"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-700 transition-colors hover:border-teal-400 hover:text-teal-600"
                     aria-label="WhatsApp"
                   >
                     <MessageCircle className="h-5 w-5" />
                   </a>
                   <a
                     href="#quote"
-                    className="flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-500 to-gold-400 px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-lg shadow-gold-500/25"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-teal-500 to-teal-400 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-500/25 hover:bg-teal-600"
                   >
                     Request Quote
                     <ArrowRight className="h-4 w-4" />
