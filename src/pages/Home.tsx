@@ -118,143 +118,150 @@ export default function Home() {
   return (
     <div>
       {/* ===== Hero Section ===== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800">
-        {/* Abstract geometric shapes */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-32 top-10 h-96 w-96 rounded-full border border-teal-500/10" />
-          <div className="absolute -right-20 top-20 h-72 w-72 rounded-full border border-teal-500/10" />
-          <div className="absolute right-20 top-40 h-48 w-48 rounded-full border border-teal-500/10" />
-          <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-teal-500/5 blur-3xl" />
-          <div className="absolute right-1/4 top-1/3 h-64 w-64 rounded-full bg-teal-500/5 blur-3xl" />
-        </div>
+      <section className="relative flex h-[calc(100dvh-5rem)] min-h-[640px] snap-start items-center overflow-hidden">
+        {/* Background image */}
+        <img
+          src="/images/home.jpg"
+          alt="Dubai skyline"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-900/70" />
 
-        <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-44 sm:px-8 lg:px-12 lg:pt-28 lg:pb-52">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-1.5 text-sm font-medium text-teal-300"
-            >
-              <span className="flex h-2 w-2 rounded-full bg-teal-400" />
-              Your Trusted Dubai Business Setup Partner
-            </motion.div>
-
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
-            >
-              Business Setup in Dubai &{' '}
-              <span className="bg-gradient-to-r from-teal-400 to-teal-300 bg-clip-text text-transparent">
-                UAE Company Formation
-              </span>
-            </motion.h1>
-
-            {/* Sub-headline */}
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg"
-            >
-              Are you a startup or a small to medium business (SME) who wants to start a business in
-              Dubai free zone or a mainland company in Dubai or any other Emirate of the UAE? Or an
-              individual simply requiring your own UAE trade license?{' '}
-              <span className="font-semibold text-white">WE CAN HELP!</span>
-            </motion.p>
-
-            {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-8 flex flex-wrap items-center gap-4"
-            >
-              <a
-                href="/contact"
-                className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 px-7 py-3.5 text-base font-semibold text-navy-900 shadow-xl shadow-teal-500/25 transition-all duration-200 hover:shadow-2xl hover:shadow-teal-500/40 hover:brightness-105"
-              >
-                Contact Us Now
-                <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
-              </a>
-              <a
-                href="https://wa.me/97142388381"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-600 px-7 py-3.5 text-base font-medium text-slate-200 transition-colors duration-200 hover:border-teal-500/50 hover:text-teal-300"
-              >
-                <Phone className="h-5 w-5" />
-                +971 4 238 8381
-              </a>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* ===== Request Quote Card ===== */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="absolute -bottom-px left-1/2 w-full max-w-5xl -translate-x-1/2 px-6 sm:px-8"
-        >
-          <div className="rounded-2xl border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-xl sm:p-8 lg:p-10">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.5fr_1.5fr_auto] lg:items-end">
-              <div>
-                <label className="text-sm font-medium text-navy-200">Full Name</label>
-                <input
-                  type="text"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="Enter your full name"
-                  className="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-navy-400 transition-colors focus:border-teal-500/50 focus:bg-white/10 focus:outline-none"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium text-navy-200">Email / Phone</label>
-                <input
-                  type="text"
-                  value={form.contact}
-                  onChange={(e) => setForm({ ...form, contact: e.target.value })}
-                  placeholder="Email or phone number"
-                  className="mt-2 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-navy-400 transition-colors focus:border-teal-500/50 focus:bg-white/10 focus:outline-none"
-                />
-              </div>
-              <button
-                onClick={handleSubmit}
-                className="group inline-flex h-[50px] items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 px-7 text-base font-semibold text-navy-900 shadow-lg shadow-teal-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/40 hover:brightness-105"
-              >
-                {submitted ? (
-                  <>
-                    <Check className="h-5 w-5" />
-                    Sent!
-                  </>
-                ) : (
-                  <>
-                    Request A Free Quote
-                    <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
-                  </>
-                )}
-              </button>
-            </div>
-            {submitted && (
-              <motion.p
-                initial={{ opacity: 0, y: -4 }}
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-8 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
+            {/* Left: copy */}
+            <div className="max-w-3xl">
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-4 text-sm text-teal-300"
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-4 py-1.5 text-sm font-medium text-teal-300"
               >
-                Thank you! One of our consultants will reach out to you shortly.
+                <span className="flex h-2 w-2 rounded-full bg-teal-400" />
+                Your Trusted Dubai Business Setup Partner
+              </motion.div>
+
+              {/* Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+              >
+                Business Setup in Dubai &{' '}
+                <span className="bg-gradient-to-r from-teal-400 to-teal-300 bg-clip-text text-transparent">
+                  UAE Company Formation
+                </span>
+              </motion.h1>
+
+              {/* Sub-headline */}
+              <motion.p
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="mt-5 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg"
+              >
+                Are you a startup or a small to medium business (SME) who wants to start a business in
+                Dubai free zone or a mainland company in Dubai or any other Emirate of the UAE? Or an
+                individual simply requiring your own UAE trade license?{' '}
+                <span className="font-semibold text-white">WE CAN HELP!</span>
               </motion.p>
-            )}
+
+              {/* CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mt-7 flex flex-wrap items-center gap-4"
+              >
+                <a
+                  href="/contact"
+                  className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 px-7 py-3.5 text-base font-semibold text-navy-900 shadow-xl shadow-teal-500/25 transition-all duration-200 hover:shadow-2xl hover:shadow-teal-500/40 hover:brightness-105"
+                >
+                  Contact Us Now
+                  <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
+                <a
+                  href="https://wa.me/97142388381"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-400/60 px-7 py-3.5 text-base font-medium text-slate-100 transition-colors duration-200 hover:border-teal-500/50 hover:text-teal-300"
+                >
+                  <Phone className="h-5 w-5" />
+                  +971 4 238 8381
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Right: Quote Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="w-full"
+            >
+              <div className="rounded-2xl border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+                <h3 className="font-display text-xl font-bold text-white">Request a Free Quote</h3>
+                <p className="mt-1.5 text-sm text-slate-300">
+                  Tell us a little about your business goals.
+                </p>
+                <div className="mt-5 space-y-4">
+                  <div>
+                    <label className="text-sm font-medium text-navy-200">Full Name</label>
+                    <input
+                      type="text"
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      placeholder="Enter your full name"
+                      className="mt-1.5 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-white placeholder:text-navy-400 transition-colors focus:border-teal-500/50 focus:bg-white/10 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-navy-200">Email / Phone</label>
+                    <input
+                      type="text"
+                      value={form.contact}
+                      onChange={(e) => setForm({ ...form, contact: e.target.value })}
+                      placeholder="Email or phone number"
+                      className="mt-1.5 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-white placeholder:text-navy-400 transition-colors focus:border-teal-500/50 focus:bg-white/10 focus:outline-none"
+                    />
+                  </div>
+                  <button
+                    onClick={handleSubmit}
+                    className="group inline-flex h-[46px] w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-gradient-to-r from-teal-500 to-teal-400 px-7 text-base font-semibold text-navy-900 shadow-lg shadow-teal-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/40 hover:brightness-105"
+                  >
+                    {submitted ? (
+                      <>
+                        <Check className="h-5 w-5" />
+                        Sent!
+                      </>
+                    ) : (
+                      <>
+                        Request A Free Quote
+                        <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                      </>
+                    )}
+                  </button>
+                </div>
+                {submitted && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-3 text-sm text-teal-300"
+                  >
+                    Thank you! One of our consultants will reach out to you shortly.
+                  </motion.p>
+                )}
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* ===== Trust Pillars Strip ===== */}
-      <section className="bg-white pt-40 pb-20 sm:pt-44 sm:pb-24 lg:pt-48">
+      <section className="snap-start bg-white pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {pillars.map((pillar, i) => (
