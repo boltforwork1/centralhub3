@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <div>
       {/* ===== Hero Section ===== */}
-      <section className="relative flex h-[calc(100dvh-5rem)] min-h-[640px] snap-start items-center overflow-hidden">
+      <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden pt-20">
         {/* Background image */}
         <img
           src="/images/home.jpg"
@@ -261,7 +261,7 @@ export default function Home() {
       </section>
 
       {/* ===== Trust Pillars Strip ===== */}
-      <section className="snap-start bg-white pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32">
+      <section className="bg-white pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {pillars.map((pillar, i) => (
