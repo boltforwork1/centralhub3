@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Briefcase, Users, ShieldCheck, Check, CircleCheck as CheckCircle, Phone, Building2, Archive, Award, Stamp, UserCheck, Landmark, Plane, ChevronDown } from 'lucide-react';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 const pillars = [
   {
@@ -81,10 +82,10 @@ const services = [
 ];
 
 const stats = [
-  { value: '2,500+', label: 'Clients Helped' },
-  { value: '12+', label: 'Years Experience' },
-  { value: '25+', label: 'Expert Consultants' },
-  { value: '97%', label: 'Client Satisfaction' },
+  { endValue: 2500, suffix: '+', label: 'Clients Helped' },
+  { endValue: 12, suffix: '+', label: 'Years Experience' },
+  { endValue: 25, suffix: '+', label: 'Expert Consultants' },
+  { endValue: 97, suffix: '%', label: 'Client Satisfaction' },
 ];
 
 const faqs = [
@@ -398,7 +399,7 @@ export default function Home() {
                 className="text-center"
               >
                 <div className="font-display text-5xl font-bold text-teal-500">
-                  {stat.value}
+                  <AnimatedCounter endValue={stat.endValue} suffix={stat.suffix} />
                 </div>
                 <div className="mt-3 text-lg text-slate-300">{stat.label}</div>
               </motion.div>
