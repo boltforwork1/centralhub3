@@ -123,12 +123,12 @@ export default function Home() {
         <img
           src="/images/home.jpg"
           alt="Dubai skyline"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
         />
         {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-900/70" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-8 sm:px-8 lg:px-12">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-4 pb-16 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
             {/* Left: copy */}
             <div className="max-w-3xl">
