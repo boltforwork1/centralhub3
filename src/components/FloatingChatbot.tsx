@@ -1,7 +1,24 @@
 import { useState, useRef, useEffect, useMemo, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { MessageSquare, X, Send, Bot, ArrowRight, ExternalLink, RotateCcw, Sparkles } from 'lucide-react';
+import {
+  MessageSquare,
+  X,
+  Send,
+  Bot,
+  ArrowRight,
+  ExternalLink,
+  RotateCcw,
+  Sparkles,
+  Calculator,
+  Scale,
+  Building2,
+  UserCheck,
+  Clock,
+  Headset,
+  Hand,
+  type LucideIcon,
+} from 'lucide-react';
 
 type Action = {
   label: string;
@@ -24,6 +41,7 @@ type Message = {
 type QuickOption = {
   id: string;
   chip: string;
+  icon: LucideIcon;
   reply: Reply;
 };
 
@@ -131,12 +149,12 @@ const fallbackReply: Reply = {
 };
 
 const quickOptions: QuickOption[] = [
-  { id: 'cost', chip: '💰 How much does business setup cost?', reply: costGeneral },
-  { id: 'legal', chip: '⚖️ What are the legal conditions?', reply: legalReply },
-  { id: 'compare', chip: '🏢 Mainland vs Free Zone?', reply: compareReply },
-  { id: 'sponsor', chip: '🤝 Do I need a local sponsor?', reply: sponsorReply },
-  { id: 'time', chip: '⏱️ How long does it take?', reply: timelineReply },
-  { id: 'consultant', chip: '💬 Speak with a Business Consultant', reply: consultantReply },
+  { id: 'cost', chip: 'How much does business setup cost?', icon: Calculator, reply: costGeneral },
+  { id: 'legal', chip: 'What are the legal conditions?', icon: Scale, reply: legalReply },
+  { id: 'compare', chip: 'Mainland vs Free Zone?', icon: Building2, reply: compareReply },
+  { id: 'sponsor', chip: 'Do I need a local sponsor?', icon: UserCheck, reply: sponsorReply },
+  { id: 'time', chip: 'How long does it take?', icon: Clock, reply: timelineReply },
+  { id: 'consultant', chip: 'Speak with a Business Consultant', icon: Headset, reply: consultantReply },
 ];
 
 type KeywordEntry = { keywords: string[]; reply: Reply };
@@ -243,7 +261,7 @@ function getSuggestions(query: string): Suggestion[] {
 const welcomeMessage: Message = {
   id: 'welcome',
   sender: 'bot',
-  text: 'Hello! 👋 Welcome to Central Hub. How can I assist with your UAE business setup today?',
+  text: 'Welcome to Central Hub. How can I assist with your UAE business setup today?',
 };
 
 let messageCounter = 0;
@@ -326,7 +344,7 @@ export default function FloatingChatbot() {
             <div className="flex items-center justify-between bg-slate-900 px-4 py-3.5">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-500/15">
-                  <Bot className="h-5 w-5 text-teal-400" />
+                  <Hand className="h-5 w-5 text-teal-400" />
                 </div>
                 <div>
                   <p className="font-display text-sm font-bold text-white">Central Hub Smart Assistant</p>
@@ -416,15 +434,19 @@ export default function FloatingChatbot() {
             {/* Quick chips (only on fresh chat) */}
             {messages.length <= 1 && !isTyping && (
               <div className="flex flex-wrap gap-2 border-t border-slate-100 bg-white px-4 py-3">
-                {quickOptions.map((option) => (
-                  <button
-                    key={option.id}
-                    onClick={() => handleQuickOption(option)}
-                    className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-navy-700 transition-colors hover:border-teal-300 hover:bg-teal-50 hover:text-teal-700"
-                  >
-                    {option.chip}
-                  </button>
-                ))}
+                {quickOptions.map((option) => {
+                  const Icon = option.icon;
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => handleQuickOption(option)}
+                      className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-navy-700 transition-colors hover:border-teal-300 hover:bg-teal-50 hover:text-teal-700"
+                    >
+                      <Icon className="mr-1.5 h-4 w-4 shrink-0 text-teal-600" />
+                      {option.chip}
+                    </button>
+                  );
+                })}
               </div>
             )}
 
