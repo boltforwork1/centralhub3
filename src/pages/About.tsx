@@ -123,8 +123,14 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="min-h-[360px] rounded-2xl bg-slate-100"
-            />
+              className="h-[420px] overflow-hidden rounded-3xl shadow-xl shadow-slate-900/10 sm:h-[520px]"
+            >
+              <img
+                src="/images/pages/about.jpg"
+                alt="Central Hub business leader in a modern Dubai office"
+                className="h-full w-full object-cover object-center"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
