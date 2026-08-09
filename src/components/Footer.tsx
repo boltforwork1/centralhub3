@@ -55,7 +55,7 @@ export default function Footer() {
           {/* Column 1: Logo & Tagline */}
           <div className="lg:pr-4">
             <Link to="/" className="flex items-center">
-              <img src="/logo.webp" alt="CentralHub" className="h-10 w-auto" />
+              <img src="/logo2.webp" alt="CentralHub" className="h-10 w-auto" />
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-navy-400">
               CentralHub is here to ensure Investors, Entrepreneurs, and Business Owners no longer
