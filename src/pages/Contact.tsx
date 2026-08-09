@@ -88,12 +88,7 @@ export default function Contact() {
                   </li>
                 ))}
               </ul>
-
-              {/* Map Placeholder */}
-              <div className="mt-8 flex h-64 items-center justify-center rounded-xl bg-slate-200 text-sm font-medium text-slate-500">
-                Google Maps Embed Placeholder
-              </div>
-            </motion.div>
+</motion.div>
 
             {/* Right Column: Contact Form */}
             <motion.div
