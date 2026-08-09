@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FloatingChatbot from '@/components/FloatingChatbot';
 
 export default function Layout() {
   const location = useLocation();
@@ -23,6 +24,7 @@ export default function Layout() {
         </AnimatePresence>
       </main>
       <Footer />
+      <FloatingChatbot />
     </div>
   );
 }
