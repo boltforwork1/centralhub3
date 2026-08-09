@@ -49,8 +49,11 @@ export default function FreeZone() {
       subtitle="100% foreign ownership, tax exemptions, and fast-track licensing across 50+ specialized free zones."
     >
       <article>
-        {/* Placeholder featured image */}
-        <div className="w-full rounded-xl bg-slate-200 h-64" />
+        <img
+          src="/images/pages/page1.jpg"
+          alt="Business team collaborating in a Dubai office"
+          className="h-64 w-full rounded-2xl object-cover object-center shadow-lg sm:h-80"
+        />
 
         <p className="mt-8 text-lg leading-relaxed text-navy-600">
           With more than fifty Free Zones in the UAE, each catering to specific industries and

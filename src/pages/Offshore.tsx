@@ -11,8 +11,11 @@ export default function Offshore() {
       subtitle="Offshore Company Formation with UAE Bank Account. We maintain highest privacy standards."
     >
       <article>
-        {/* Placeholder featured image */}
-        <div className="w-full rounded-xl bg-slate-200 h-64" />
+        <img
+          src="/images/pages/page4.jpg"
+          alt="Business leadership team planning in a Dubai boardroom"
+          className="h-64 w-full rounded-2xl object-cover object-center shadow-lg sm:h-80"
+        />
 
         <p className="mt-8 text-lg leading-relaxed text-navy-600">
           Offshore companies offer a legitimate approach to wealth management, asset protection, and

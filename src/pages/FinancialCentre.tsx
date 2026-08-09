@@ -11,8 +11,11 @@ export default function FinancialCentre() {
       subtitle="World-class financial jurisdictions for banks, fintech, investment firms, and professional services."
     >
       <article>
-        {/* Placeholder featured image */}
-        <div className="w-full rounded-xl bg-slate-200 h-64" />
+        <img
+          src="/images/pages/page3.jpg"
+          alt="Financial advisor reviewing business documents with a client"
+          className="h-64 w-full rounded-2xl object-cover object-center shadow-lg sm:h-80"
+        />
 
         <p className="mt-8 text-lg leading-relaxed text-navy-600">
           The UAE has two specialist free zones focusing on the financial sector: the Dubai

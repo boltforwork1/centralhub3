@@ -53,8 +53,11 @@ export default function Mainland() {
       subtitle="Mainland company setup in Dubai and the UAE is quick & hassle-free, with 100% ownership for most activities."
     >
       <article>
-        {/* Placeholder featured image */}
-        <div className="w-full rounded-xl bg-slate-200 h-64" />
+        <img
+          src="/images/pages/page2.jpg"
+          alt="Business partners shaking hands in a Dubai office"
+          className="h-64 w-full rounded-2xl object-cover object-center shadow-lg sm:h-80"
+        />
 
         <p className="mt-8 text-lg leading-relaxed text-navy-600">
           The UAE is recognised as a prime destination for foreign investors seeking to establish a
