@@ -45,7 +45,7 @@ type QuickOption = {
   reply: Reply;
 };
 
-const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=+971585570778';
+const WHATSAPP_URL = 'https://wa.me/971585570778';
 
 /* ------------------------------------------------------------------ */
 /* Knowledge base                                                      */
